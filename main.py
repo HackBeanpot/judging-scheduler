@@ -11,6 +11,23 @@ def parse_project():
         return json.load(f)
 
 
+def scheduling_conflict(curr_proj, assigns, curr_round):
+    for judge in assigns:
+        try:
+            pot_conflict = assigns[judge][curr_round]
+        except IndexError:
+            pot_conflict = None
+
+        if pot_conflict is not None and pot_conflict['name'] == curr_proj['name']:
+            print("Current project: ", curr_proj['name'])
+            print("Conflict with: ", pot_conflict['name'])
+            print()
+
+            return True
+
+    return False
+
+
 def distribute_projects(projects, num_judges):
     assignments = {}
 
@@ -21,7 +38,7 @@ def distribute_projects(projects, num_judges):
             proj = projects[random.randint(0, len(projects) - 1)]
             if i in assignments:
                 # If project is already assigned to this judge, find another one
-                while proj in assignments[i]:
+                while proj in assignments[i] or scheduling_conflict(proj, assignments, j):
                     proj = projects[random.randint(0, len(projects) - 1)]
 
                 # Add to the list of judges for this project
@@ -33,13 +50,7 @@ def distribute_projects(projects, num_judges):
     return assignments
 
 
-def fix_conflicts(assignments):
-    print(assignments)
-    # TODO: do something here to fix multiple judges seeing the same project at the same time
-
-
 projectObj = parse_project()
-
 judge_assignments = distribute_projects(projectObj["projects"], 4)
 
-fix_conflicts(judge_assignments)
+print(judge_assignments)
