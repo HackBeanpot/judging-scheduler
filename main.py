@@ -33,8 +33,13 @@ def distribute_projects(projects, num_judges):
     return assignments
 
 
+def fix_conflicts(assignments):
+    print(assignments)
+    # TODO: do something here to fix multiple judges seeing the same project at the same time
+
+
 projectObj = parse_project()
 
 judge_assignments = distribute_projects(projectObj["projects"], 4)
 
-print(judge_assignments)
+fix_conflicts(judge_assignments)
