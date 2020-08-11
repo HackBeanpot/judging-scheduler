@@ -19,9 +19,9 @@ def scheduling_conflict(curr_proj, assigns, curr_round):
             pot_conflict = None
 
         if pot_conflict is not None and pot_conflict['name'] == curr_proj['name']:
-            print("Current project: ", curr_proj['name'])
-            print("Conflict with: ", pot_conflict['name'])
-            print()
+            # print("Current project: ", curr_proj['name'])
+            # print("Conflict with: ", pot_conflict['name'])
+            # print()
 
             return True
 
@@ -53,4 +53,4 @@ def distribute_projects(projects, num_judges):
 projectObj = parse_project()
 judge_assignments = distribute_projects(projectObj["projects"], 4)
 
-print(judge_assignments)
+# print(judge_assignments)
