@@ -1,24 +1,31 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import results from './python_code/results.json';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>
+        Judging Scheduler
+      </h1>
+      <div className='JudgingAssignments'>
+        {Object.entries(results).forEach((key, value) => (
+            <div className='ProjectAssignment'>
+              <h2>
+                { value }
+              </h2>
+              <ol>
+                { results[value].forEach((result) => (
+                  <li>
+                    { result["name"] }
+                  </li>
+                )) }
+              </ol>
+            </div>
+          )
+        )}
+      </div>
     </div>
   );
 }
