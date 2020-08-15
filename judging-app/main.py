@@ -49,8 +49,12 @@ def distribute_projects(projects, num_judges):
 
     return assignments
 
+def dumpJson(assignments_dict):
+  with open('results.json', 'w') as fp:
+    json.dump(assignments_dict, fp)
+
 
 projectObj = parse_project()
 judge_assignments = distribute_projects(projectObj["projects"], 4)
-
+dumpJson(judge_assignments)
 # print(judge_assignments)
