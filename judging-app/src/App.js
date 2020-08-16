@@ -8,22 +8,19 @@ function App() {
       <h1>
         Judging Scheduler
       </h1>
-      <div className='JudgingAssignments'>
+      <div className="ProjectAssignments_All">
         {Object.entries(results).forEach((key, value) => (
-          <div className='ProjectAssignment'>
-            <h2>
+          <div className="ProjectAssignments_Individual">
+            <h2 className="ProjectAssignments_JudgeName">
               Test
             </h2>
-            <ol>
-              {results[value].forEach((result) => (
-                <li>
-                  { result["name"] }
-                </li>
-              )) }
+            <ol className="ProjectAssignments_ProjectList">
+              {results[value].forEach((result) => {
+                console.log(result.name)
+              }) }
             </ol>
           </div>
-          )
-        )}
+        ))}
       </div>
     </div>
   );
