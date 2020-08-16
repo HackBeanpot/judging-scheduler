@@ -9,15 +9,18 @@ function App() {
         Judging Scheduler
       </h1>
       <div className="ProjectAssignments_All">
-        {Object.entries(results).forEach((key, value) => (
+        {Object.entries(results).map((key, value) => (
           <div className="ProjectAssignments_Individual">
             <h2 className="ProjectAssignments_JudgeName">
-              Test
+              { value }
             </h2>
             <ol className="ProjectAssignments_ProjectList">
-              {results[value].forEach((result) => {
-                console.log(result.name)
-              }) }
+              {results[value].map((result) => (
+
+                  <li className="ProjectAssignments_IndividualProject">
+                    { result.name }
+                  </li>
+              )) }
             </ol>
           </div>
         ))}
