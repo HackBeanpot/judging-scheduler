@@ -1,5 +1,5 @@
 {
-  "0": [
+  "judge 1": [
     {"name": "project six", "description": "the sixth project"},
     {"name": "project three", "description": "the third project"},
     {"name": "project five", "description": "the fifth project"},
@@ -7,14 +7,14 @@
     {"name": "project one", "description": "the first project"},
     {"name": "project eight", "description": "the eighth project"}
   ],
-  "1": [{"name": "project six", "description": "the sixth project"},
+  "judge 2": [{"name": "project six", "description": "the sixth project"},
     {"name": "project four", "description": "the fourth project"},
     {"name": "project eight", "description": "the eighth project"},
     {"name": "project seven", "description": "the seventh project"},
     {"name": "project two", "description": "the second project"},
     {"name": "project five", "description": "the fifth project"}
   ],
-  "2": [
+  "judge 3": [
     {"name": "project four", "description": "the fourth project"},
     {"name": "project eight", "description": "the eighth project"},
     {"name": "project six", "description": "the sixth project"},
@@ -22,7 +22,7 @@
     {"name": "project seven", "description": "the seventh project"},
     {"name": "project one", "description": "the first project"}
   ],
-  "3": [
+  "judge 4": [
     {"name": "project eight", "description": "the eighth project"},
     {"name": "project two", "description": "the second project"},
     {"name": "project three", "description": "the third project"},

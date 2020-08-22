@@ -15,8 +15,7 @@ function App() {
               { value }
             </h2>
             <ol className="ProjectAssignments_ProjectList">
-              {results[value].map((result) => (
-
+              {results[key[0]].map((result) => (
                   <li className="ProjectAssignments_IndividualProject">
                     { result.name }
                   </li>
