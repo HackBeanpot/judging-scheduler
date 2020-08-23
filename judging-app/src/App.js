@@ -1,26 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import 'semantic-ui-css/semantic.min.css';
+import 'react-dropdown/style.css';
 import ScheduleTable from "./ScheduleTable";
 import ProjectsList from "./python_code/mock_projects.json"
-import { Dropdown } from "semantic-ui-react";
-
-function GetOptions() {
-  const options = [];
-
-  ProjectsList.projects.forEach((project) => {
-    let obj = {
-      key: project.name,
-      text: project.name,
-      value: project.name,
-    }
-    options.push(obj)
-  })
-
-  return options;
-}
+import Dropdown from "react-dropdown";
 
 function App() {
+  const [selectedProject, setSelectedProject] = useState('')
+
+  const getOptions = () => {
+    let projects = ProjectsList.projects.map((project) => { return project.name})
+    projects.push("None")
+    return projects
+  }
+
+  const onProjectSelect = (event, data) => {
+    console.log(selectedProject)
+    setSelectedProject(event.value)
+    console.log(selectedProject)
+  }
+
   return (
     <div className="App">
       <h1>
@@ -30,7 +29,7 @@ function App() {
         <h3 className='SelectorTitle'>
           Choose a Project
         </h3>
-        <Dropdown clearable options={GetOptions()} selection/>
+        <Dropdown className='dropdown' options={getOptions()} onChange={onProjectSelect}/>
       </div>
       <div className="Schedule">
         <ScheduleTable className='Schedule__Table'/>
