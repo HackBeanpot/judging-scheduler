@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import results from './python_code/results.json';
 import "./ScheduleTable.css";
 
-const BASE_TIME = 1100
+const TIME_SLOTS = ['11:00', '11:15', '11:30', '11:45', '12:00', '12:15']
+const JUDGES = Object.keys(results);
 
 export default class ScheduleTable extends Component {
   render() {
@@ -10,32 +11,32 @@ export default class ScheduleTable extends Component {
 
     // Create header row
     const header = [];
-    header.push(<td id='time-header'>Time</td>)
+    header.push(<th id='time-header'>Time</th>)
     Object.entries(results).forEach(([key, value]) => {
       let judgeId = `judge-${key}`
-      header.push(<td id={judgeId}>{ key }</td>)
+      header.push(<th id={judgeId}>{ key }</th>)
     })
-    rows.push(<tr id='header-row'>{ header }</tr>)
+    const headRow = <thead className='header-row'>{ header }</thead>
 
     // Create rows based on each schedules
-    for (let row = 0; row < results["judge 1"].length; row++) {
+    for (let row = 0; row < results[JUDGES[0]].length; row++) {
       let rowId = `row${row}`
       const cells = [];
 
       // Create column for time
-      let currTime = BASE_TIME + (row * 5)
-      cells.push(<td id='time-col'>{ currTime }</td> )
+      cells.push(<td className='time-col'>{ TIME_SLOTS[row] }</td> )
 
 
-      for (let col = 0; col < Object.keys(results).length; col++) {
+      for (let col = 0; col < JUDGES.length; col++) {
         let cellId = `cell${row}-${col}`
-        cells.push(<td key={cellId} id={cellId}>{ results[Object.keys(results)[col]][row].name }</td>)
+        cells.push(<td key={cellId} className={cellId}>{ results[Object.keys(results)[col]][row].name }</td>)
       }
-      rows.push(<tr key={row} id={rowId}>{cells}</tr>);
+      rows.push(<tr key={row} className={rowId}>{cells}</tr>);
     }
     return (
       <div className='schedule_container'>
         <table className='schedule_table'>
+          {headRow}
           <tbody>
             {rows}
           </tbody>

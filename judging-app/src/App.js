@@ -8,9 +8,8 @@ function App() {
       <h1>
         Judging Scheduler
       </h1>
-      <div className="ProjectAssignments_All">
-        <ScheduleTable>
-        </ScheduleTable>
+      <div className="Schedule">
+        <ScheduleTable className='Schedule__Table'/>
       </div>
     </div>
   );
