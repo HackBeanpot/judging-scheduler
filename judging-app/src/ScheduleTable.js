@@ -16,7 +16,7 @@ export default class ScheduleTable extends Component {
       let judgeId = `judge-${key}`
       header.push(<th id={judgeId}>{ key }</th>)
     })
-    const headRow = <thead className='header-row'>{ header }</thead>
+    const headRow = <tr className='header-row'>{ header }</tr>
 
     // Create rows based on each schedules
     for (let row = 0; row < results[JUDGES[0]].length; row++) {
@@ -36,7 +36,9 @@ export default class ScheduleTable extends Component {
     return (
       <div className='schedule_container'>
         <table className='schedule_table'>
-          {headRow}
+          <thead>
+            {headRow}
+          </thead>
           <tbody>
             {rows}
           </tbody>

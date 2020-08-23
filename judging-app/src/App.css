@@ -2,6 +2,17 @@
   text-align: center;
 }
 
+.Selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.SelectorTitle {
+  margin-right: 10px;
+}
+
 .Schedule {
   display: flex;
   justify-content: center;
