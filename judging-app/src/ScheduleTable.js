@@ -35,6 +35,9 @@ export default class ScheduleTable extends Component {
     }
     return (
       <div className='schedule_container'>
+        <h2>
+          {this.props.selectedProject}
+        </h2>
         <table className='schedule_table'>
           <thead>
             {headRow}

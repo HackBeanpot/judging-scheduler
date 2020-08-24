@@ -15,9 +15,7 @@ function App() {
   }
 
   const onProjectSelect = (event, data) => {
-    console.log(selectedProject)
     setSelectedProject(event.value)
-    console.log(selectedProject)
   }
 
   return (
@@ -32,7 +30,7 @@ function App() {
         <Dropdown className='dropdown' options={getOptions()} onChange={onProjectSelect}/>
       </div>
       <div className="Schedule">
-        <ScheduleTable className='Schedule__Table'/>
+        <ScheduleTable className='Schedule__Table' selectedProject={ selectedProject }/>
       </div>
     </div>
   );
