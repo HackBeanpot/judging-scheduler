@@ -7,3 +7,7 @@ th, td {
     padding: .5rem;
     text-align: left;
 }
+
+.selected-cell {
+    background: aqua;
+}

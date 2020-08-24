@@ -28,16 +28,19 @@ export default class ScheduleTable extends Component {
 
 
       for (let col = 0; col < JUDGES.length; col++) {
-        let cellId = `cell${row}-${col}`
-        cells.push(<td key={cellId} className={cellId}>{ results[Object.keys(results)[col]][row].name }</td>)
+        let cellId = `cell${row}-${col}`;
+        let projectName = results[JUDGES[col]][row].name
+
+        if (projectName === this.props.selectedProject) {
+          cells.push(<td key={cellId} className='selected-cell'>{ projectName }</td>)
+        } else {
+          cells.push(<td key={cellId} className={cellId}>{ projectName }</td>)
+        }
       }
       rows.push(<tr key={row} className={rowId}>{cells}</tr>);
     }
     return (
       <div className='schedule_container'>
-        <h2>
-          {this.props.selectedProject}
-        </h2>
         <table className='schedule_table'>
           <thead>
             {headRow}
