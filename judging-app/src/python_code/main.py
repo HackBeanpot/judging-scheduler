@@ -54,7 +54,7 @@ def distribute_projects(projects):
 # Send assignments_dict to json file for front-end
 def dump_json(assignments_dict):
     with open('../json/results.json', 'w') as fp:
-        json.dump(assignments_dict, fp)
+        json.dump(assignments_dict, fp, indent=2)
 
 
 projectObj = parse_project()
