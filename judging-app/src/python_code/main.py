@@ -1,11 +1,17 @@
 import json
 import random
 
-TIME_FOR_ONE_PROJECT = 5
-TOTAL_TIME = 30
+# Judges list and number of judges
+JUDGES = ["Bob", "Joe", "Moe", "Toe"]
+NUM_JUDGES = len(JUDGES)
+
+# Number of projects each judge can view
+TIME_FOR_ONE_PROJECT = 15
+TOTAL_TIME = 90
 NUM_PROJECTS_PER_JUDGE = int(TOTAL_TIME/TIME_FOR_ONE_PROJECT)
 
 
+# Load projects from json
 def parse_project():
     with open('mock_projects.json') as f:
         return json.load(f)
@@ -50,7 +56,12 @@ def distribute_projects(projects, num_judges):
     return assignments
 
 
-projectObj = parse_project()
-judge_assignments = distribute_projects(projectObj["projects"], 4)
+# Send assignments_dict to json file for front-end
+def dump_json(assignments_dict):
+    with open('results.json', 'w') as fp:
+        json.dump(assignments_dict, fp)
 
-# print(judge_assignments)
+
+projectObj = parse_project()
+judge_assignments = distribute_projects(projectObj["projects"], NUM_JUDGES)
+dump_json(judge_assignments)
