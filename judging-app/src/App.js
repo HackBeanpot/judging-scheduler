@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import 'react-dropdown/style.css';
 import ScheduleTable from "./ScheduleTable";
-import ProjectsList from "./mock_projects.json"
+import ProjectsList from "./json/mock_projects.json"
 import Dropdown from "react-dropdown";
 
 function App() {

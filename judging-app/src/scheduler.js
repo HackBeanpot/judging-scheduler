@@ -1,4 +1,4 @@
-import Projects from './mock_projects.json'
+import Projects from './json/mock_projects.json'
 
 const TIME_PER_PROJECT = 15
 const TOTAL_TIME = 90
