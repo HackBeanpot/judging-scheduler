@@ -1,28 +1,106 @@
-{"Bob": [
-  {"name": "project two", "description": "the second project"},
-  {"name": "project three", "description": "the third project"},
-  {"name": "project six", "description": "the sixth project"},
-  {"name": "project four", "description": "the fourth project"},
-  {"name": "project eight", "description": "the eighth project"},
-  {"name": "project seven", "description": "the seventh project"}],
+{
+  "Bob": [
+    {
+      "name": "project five",
+      "description": "the fifth project"
+    },
+    {
+      "name": "project seven",
+      "description": "the seventh project"
+    },
+    {
+      "name": "project six",
+      "description": "the sixth project"
+    },
+    {
+      "name": "project four",
+      "description": "the fourth project"
+    },
+    {
+      "name": "project eight",
+      "description": "the eighth project"
+    },
+    {
+      "name": "project three",
+      "description": "the third project"
+    }
+  ],
   "Joe": [
-    {"name": "project five", "description": "the fifth project"},
-    {"name": "project four", "description": "the fourth project"},
-    {"name": "project three", "description": "the third project"},
-    {"name": "project eight", "description": "the eighth project"},
-    {"name": "project six", "description": "the sixth project"},
-    {"name": "project one", "description": "the first project"}],
+    {
+      "name": "project three",
+      "description": "the third project"
+    },
+    {
+      "name": "project two",
+      "description": "the second project"
+    },
+    {
+      "name": "project four",
+      "description": "the fourth project"
+    },
+    {
+      "name": "project eight",
+      "description": "the eighth project"
+    },
+    {
+      "name": "project one",
+      "description": "the first project"
+    },
+    {
+      "name": "project seven",
+      "description": "the seventh project"
+    }
+  ],
   "Moe": [
-    {"name": "project four", "description": "the fourth project"},
-    {"name": "project seven", "description": "the seventh project"},
-    {"name": "project one", "description": "the first project"},
-    {"name": "project three", "description": "the third project"},
-    {"name": "project five", "description": "the fifth project"},
-    {"name": "project two", "description": "the second project"}],
+    {
+      "name": "project four",
+      "description": "the fourth project"
+    },
+    {
+      "name": "project five",
+      "description": "the fifth project"
+    },
+    {
+      "name": "project one",
+      "description": "the first project"
+    },
+    {
+      "name": "project three",
+      "description": "the third project"
+    },
+    {
+      "name": "project two",
+      "description": "the second project"
+    },
+    {
+      "name": "project six",
+      "description": "the sixth project"
+    }
+  ],
   "Toe": [
-    {"name": "project eight", "description": "the eighth project"},
-    {"name": "project six", "description": "the sixth project"},
-    {"name": "project seven", "description": "the seventh project"},
-    {"name": "project two", "description": "the second project"},
-    {"name": "project four", "description": "the fourth project"},
-    {"name": "project five", "description": "the fifth project"}]}
+    {
+      "name": "project six",
+      "description": "the sixth project"
+    },
+    {
+      "name": "project three",
+      "description": "the third project"
+    },
+    {
+      "name": "project seven",
+      "description": "the seventh project"
+    },
+    {
+      "name": "project one",
+      "description": "the first project"
+    },
+    {
+      "name": "project five",
+      "description": "the fifth project"
+    },
+    {
+      "name": "project eight",
+      "description": "the eighth project"
+    }
+  ]
+}
