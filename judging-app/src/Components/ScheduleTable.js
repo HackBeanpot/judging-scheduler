@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import results from './json/results.json';
-import "./ScheduleTable.css";
+import results from '../json/results.json';
+import "../CSS/ScheduleTable.css";
 
 const TIME_SLOTS = ['11:00', '11:15', '11:30', '11:45', '12:00', '12:15']
 const JUDGES = Object.keys(results);

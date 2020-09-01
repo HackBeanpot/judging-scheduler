@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './CSS/App.css';
 import 'react-dropdown/style.css';
 import { Link } from 'react-router-dom'
 import Main from "./Main";
@@ -8,7 +8,11 @@ function App() {
   return (
     <div className='App'>
       <Main/>
-      <Link to="/admin">Click me</Link>
+      <div className='Links'>
+        <Link to="/" >Home</Link>
+        <Link to="/admin">General View</Link>
+        <Link to="/judge">Judge View</Link>
+      </div>
     </div>
   )
 }

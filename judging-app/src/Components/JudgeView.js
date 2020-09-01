@@ -1,15 +1,13 @@
 import React, { useState } from "react";
-import ProjectsList from "./json/mock_projects.json";
+import ProjectsList from "../json/mock_projects.json";
 import Dropdown from "react-dropdown";
 import ScheduleTable from "./ScheduleTable";
 
-function AdminView() {
+function JudgeView() {
   const [selectedProject, setSelectedProject] = useState('')
 
   const getOptions = () => {
-    let projects = ProjectsList.projects.map((project) => {
-      return project.name
-    })
+    let projects = ProjectsList.projects.map((project) => { return project.name})
     projects.push("None")
     return projects
   }
@@ -19,21 +17,21 @@ function AdminView() {
   }
 
   return (
-    <div className="AdminView">
+    <div className="JudgeView">
       <h1>
         Judging Scheduler
       </h1>
       <div className='Selector'>
         <h3 className='SelectorTitle'>
-          Choose a Project
+          Choose a Judge
         </h3>
         <Dropdown className='dropdown' options={getOptions()} onChange={onProjectSelect}/>
       </div>
       <div className="Schedule">
-        <ScheduleTable className='Schedule__Table' selectedProject={selectedProject}/>
+        <ScheduleTable className='Schedule__Table' selectedProject={ selectedProject }/>
       </div>
     </div>
   );
 }
 
-export default AdminView;
+export default JudgeView

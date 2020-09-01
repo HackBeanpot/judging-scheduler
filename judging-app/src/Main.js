@@ -1,5 +1,5 @@
-import AdminView from "./AdminView";
-import JudgeView from "./JudgeView";
+import AdminView from "./Components/AdminView";
+import JudgeView from "./Components/JudgeView";
 import React from "react";
 import Switch from "react-router-dom/es/Switch";
 import Route from "react-router-dom/es/Route";
