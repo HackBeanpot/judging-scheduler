@@ -9,9 +9,9 @@ function App() {
     <div className='App'>
       <Main/>
       <div className='Links'>
-        <Link to="/" >Home</Link>
-        <Link to="/admin">General View</Link>
-        <Link to="/judge">Judge View</Link>
+        <Link to='/home' >Home</Link>
+        <Link to='/admin'>General View</Link>
+        <Link to='/judge'>Judge View</Link>
       </div>
     </div>
   )

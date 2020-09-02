@@ -50,6 +50,6 @@ export default class ScheduleTable extends Component {
           </tbody>
         </table>
       </div>
-    )
+    );
   }
 }

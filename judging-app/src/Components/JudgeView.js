@@ -1,19 +1,18 @@
 import React, { useState } from "react";
-import ProjectsList from "../json/mock_projects.json";
+import ResultList from "../json/results.json"
 import Dropdown from "react-dropdown";
-import ScheduleTable from "./ScheduleTable";
+import JudgeTable from "./JudgeTable";
 
 function JudgeView() {
-  const [selectedProject, setSelectedProject] = useState('')
+  const [selectedJudge, setSelectedJudge] = useState(Object.keys(ResultList)[0])
 
   const getOptions = () => {
-    let projects = ProjectsList.projects.map((project) => { return project.name})
-    projects.push("None")
-    return projects
+    return Object.keys(ResultList)
   }
 
   const onProjectSelect = (event, data) => {
-    setSelectedProject(event.value)
+    console.log(event.value)
+    setSelectedJudge(event.value)
   }
 
   return (
@@ -28,7 +27,7 @@ function JudgeView() {
         <Dropdown className='dropdown' options={getOptions()} onChange={onProjectSelect}/>
       </div>
       <div className="Schedule">
-        <ScheduleTable className='Schedule__Table' selectedProject={ selectedProject }/>
+        <JudgeTable className='Judge__Table' selectedJudge={ selectedJudge }/>
       </div>
     </div>
   );
