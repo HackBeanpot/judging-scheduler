@@ -2,6 +2,10 @@ table {
     border-collapse: collapse;
 }
 
+th {
+    background: #DDFFFF;
+}
+
 th, td {
     border: 1px solid #999;
     padding: .5rem;
