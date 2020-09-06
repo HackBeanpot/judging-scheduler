@@ -24,3 +24,11 @@
   display: flex;
   justify-content: space-around;
 }
+
+.text-link {
+  border-radius: 25px;
+  border: 2px solid #1B365D;
+  padding: 10px;
+  background: #DDFFFF;
+  color: #102037;
+}

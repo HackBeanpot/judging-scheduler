@@ -1,7 +1,4 @@
-import React, { useState } from "react";
-import ProjectsList from "../json/mock_projects.json";
-import Dropdown from "react-dropdown";
-import ScheduleTable from "./ScheduleTable";
+import React from "react";
 
 function Home() {
   return (
