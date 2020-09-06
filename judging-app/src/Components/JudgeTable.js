@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import results from '../json/results.json';
+import '../CSS/JudgeTable.css'
 
 const TIME_SLOTS = ['11:00', '11:15', '11:30', '11:45', '12:00', '12:15']
 
@@ -9,33 +10,33 @@ export default class JudgeTable extends Component {
     const rows = []
 
     const header = []
-    header.push(<th id='time-header'>Time</th>)
+    header.push(<div className='table-header-cell'>Time</div>)
     const judgeId = `judge-${selectedJudge}`
-    header.push(<th id={ judgeId }> { selectedJudge } </th>);
-    const headRow = <tr className='header-row'> {header} </tr>
+    header.push(<div className='table-header-cell' id={ judgeId }> { selectedJudge } </div>);
+    // const headRow = <div className='header-row'> {header} </div>
 
     for (let row = 0; row < results[selectedJudge].length; row++) {
       let rowId = `row-${row}`
       const cells = []
-      cells.push(<td className='time-col'> { TIME_SLOTS[row] } </td> )
+      cells.push(<div className='table-cell'> { TIME_SLOTS[row] } </div> )
 
       let cellId = `cell${row}`
       let projectName = results[selectedJudge][row].name
-      cells.push(<td key={cellId} className={cellId}> { projectName } </td> )
+      cells.push(<div key={cellId} className='table-cell'> { projectName } </div> )
 
-      rows.push(<tr key={row} className={rowId}>{ cells }</tr> )
+      rows.push(<div key={row} className='table-row'>{ cells }</div> )
     }
 
     return (
       <div className='schedule-container'>
-        <table className='schedule-table'>
-          <thead>
-            { headRow }
-          </thead>
-          <tbody>
+        <div className='schedule-table'>
+          <div className='schedule-header'>
+            { header }
+          </div>
+          <div className='schedule-body'>
             { rows }
-          </tbody>
-        </table>
+          </div>
+        </div>
       </div>
     );
   }
